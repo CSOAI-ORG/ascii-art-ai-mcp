@@ -1,0 +1,10 @@
+name: ascii-art-ai-mcp
+description: "MEOK AI Labs — ASCII art generation and formatting tools powered by MEOK AI Labs."
+vendor: MEOK AI Labs
+homepage: https://meok.ai
+repository: https://github.com/CSOAI-ORG/ascii-art-ai-mcp
+license: MIT
+categories: [Creative, Text Processing]
+tags: [ascii-art, text-art, terminal-art, unicode-art, creative-coding]
+runtime: python
+entrypoint: server.py

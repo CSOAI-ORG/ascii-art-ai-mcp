@@ -1,0 +1,23 @@
+{
+  "name": "ascii-art-ai-mcp",
+  "description": "MEOK AI Labs \u2014 ASCII art generation and formatting tools powered by MEOK AI Labs.",
+  "vendor": "MEOK AI Labs",
+  "homepage": "https://meok.ai",
+  "repository": "https://github.com/CSOAI-ORG/ascii-art-ai-mcp",
+  "runtime": "python",
+  "entrypoint": "server.py",
+  "tools": [
+    "text_to_ascii",
+    "generate_box",
+    "table_formatter",
+    "progress_bar_generator"
+  ],
+  "categories": [
+    "Creative",
+    "Text Processing"
+  ],
+  "pricing": {
+    "free": "50 calls/day",
+    "pro": "$9/mo"
+  }
+}
