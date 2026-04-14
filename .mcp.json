@@ -1,23 +1,101 @@
 {
   "name": "ascii-art-ai-mcp",
-  "description": "MEOK AI Labs \u2014 ASCII art generation and formatting tools powered by MEOK AI Labs.",
-  "vendor": "MEOK AI Labs",
-  "homepage": "https://meok.ai",
-  "repository": "https://github.com/CSOAI-ORG/ascii-art-ai-mcp",
-  "runtime": "python",
-  "entrypoint": "server.py",
+  "description": "Text-to-ASCII art, box drawing, table formatting, and progress bars.",
+  "version": "1.0.0",
   "tools": [
-    "text_to_ascii",
-    "generate_box",
-    "table_formatter",
-    "progress_bar_generator"
-  ],
-  "categories": [
-    "Creative",
-    "Text Processing"
-  ],
-  "pricing": {
-    "free": "50 calls/day",
-    "pro": "$9/mo"
-  }
+    {
+      "name": "text_to_ascii",
+      "description": "Convert text to ASCII art using built-in block font.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string"
+          },
+          "font": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "text"
+        ]
+      }
+    },
+    {
+      "name": "generate_box",
+      "description": "Generate a box around text with various border styles.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string"
+          },
+          "style": {
+            "type": "string"
+          },
+          "padding": {
+            "type": "integer"
+          },
+          "width": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "text"
+        ]
+      }
+    },
+    {
+      "name": "table_formatter",
+      "description": "Format data as an ASCII table.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "headers": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "rows": {
+            "type": "array",
+            "items": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "style": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "headers",
+          "rows"
+        ]
+      }
+    },
+    {
+      "name": "progress_bar_generator",
+      "description": "Generate an ASCII progress bar.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "progress": {
+            "type": "number"
+          },
+          "width": {
+            "type": "integer"
+          },
+          "style": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "progress"
+        ]
+      }
+    }
+  ]
 }

@@ -3,6 +3,11 @@ ASCII Art AI MCP Server
 ASCII art generation and formatting tools powered by MEOK AI Labs.
 """
 
+
+import sys, os
+sys.path.insert(0, os.path.expanduser('~/clawd/meok-labs-engine/shared'))
+from auth_middleware import check_access
+
 import time
 from collections import defaultdict
 from mcp.server.fastmcp import FastMCP
@@ -46,13 +51,17 @@ def _check_rate_limit(tool_name: str) -> None:
 
 
 @mcp.tool()
-def text_to_ascii(text: str, font: str = "block") -> dict:
+def text_to_ascii(text: str, font: str = "block", api_key: str = "") -> dict:
     """Convert text to ASCII art using built-in block font.
 
     Args:
         text: Text to convert (A-Z, 0-9, space, basic punctuation)
         font: Font style - 'block' (default)
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     _check_rate_limit("text_to_ascii")
     text = text.upper()[:30]
     lines = [""] * 5
@@ -65,7 +74,7 @@ def text_to_ascii(text: str, font: str = "block") -> dict:
 
 
 @mcp.tool()
-def generate_box(text: str, style: str = "single", padding: int = 1, width: int = 0) -> dict:
+def generate_box(text: str, style: str = "single", padding: int = 1, width: int = 0, api_key: str = "") -> dict:
     """Generate a box around text with various border styles.
 
     Args:
@@ -74,6 +83,10 @@ def generate_box(text: str, style: str = "single", padding: int = 1, width: int 
         padding: Internal padding (default 1)
         width: Fixed width (0 = auto-fit)
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     _check_rate_limit("generate_box")
     styles = {
         "single":  {"tl": "\u250c", "tr": "\u2510", "bl": "\u2514", "br": "\u2518", "h": "\u2500", "v": "\u2502"},
@@ -101,7 +114,7 @@ def generate_box(text: str, style: str = "single", padding: int = 1, width: int 
 
 
 @mcp.tool()
-def table_formatter(headers: list[str], rows: list[list[str]], style: str = "grid") -> dict:
+def table_formatter(headers: list[str], rows: list[list[str]], style: str = "grid", api_key: str = "") -> dict:
     """Format data as an ASCII table.
 
     Args:
@@ -109,6 +122,10 @@ def table_formatter(headers: list[str], rows: list[list[str]], style: str = "gri
         rows: List of rows (each row is a list of cell strings)
         style: Table style - 'grid', 'simple', 'pipe' (markdown)
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     _check_rate_limit("table_formatter")
     col_widths = [len(h) for h in headers]
     for row in rows:
@@ -143,7 +160,7 @@ def table_formatter(headers: list[str], rows: list[list[str]], style: str = "gri
 
 
 @mcp.tool()
-def progress_bar_generator(progress: float, width: int = 30, style: str = "block") -> dict:
+def progress_bar_generator(progress: float, width: int = 30, style: str = "block", api_key: str = "") -> dict:
     """Generate an ASCII progress bar.
 
     Args:
@@ -151,6 +168,10 @@ def progress_bar_generator(progress: float, width: int = 30, style: str = "block
         width: Bar width in characters (default 30)
         style: Bar style - 'block', 'arrow', 'dots', 'hash'
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     _check_rate_limit("progress_bar_generator")
     if progress > 1.0:
         progress = progress / 100.0

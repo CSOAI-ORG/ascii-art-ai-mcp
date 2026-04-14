@@ -1,10 +1,52 @@
 name: ascii-art-ai-mcp
-description: "MEOK AI Labs — ASCII art generation and formatting tools powered by MEOK AI Labs."
-vendor: MEOK AI Labs
-homepage: https://meok.ai
-repository: https://github.com/CSOAI-ORG/ascii-art-ai-mcp
-license: MIT
-categories: [Creative, Text Processing]
-tags: [ascii-art, text-art, terminal-art, unicode-art, creative-coding]
-runtime: python
-entrypoint: server.py
+description: Text-to-ASCII art, box drawing, table formatting, and progress bars.
+version: 1.0.0
+tools:
+- name: text_to_ascii
+  description: Convert text to ASCII art using built-in block font.
+  parameters:
+  - name: text
+    type: string
+    required: true
+  - name: font
+    type: string
+    required: false
+- name: generate_box
+  description: Generate a box around text with various border styles.
+  parameters:
+  - name: text
+    type: string
+    required: true
+  - name: style
+    type: string
+    required: false
+  - name: padding
+    type: integer
+    required: false
+  - name: width
+    type: integer
+    required: false
+- name: table_formatter
+  description: Format data as an ASCII table.
+  parameters:
+  - name: headers
+    type: array
+    required: true
+  - name: rows
+    type: array
+    required: true
+  - name: style
+    type: string
+    required: false
+- name: progress_bar_generator
+  description: Generate an ASCII progress bar.
+  parameters:
+  - name: progress
+    type: number
+    required: true
+  - name: width
+    type: integer
+    required: false
+  - name: style
+    type: string
+    required: false
