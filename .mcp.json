@@ -1,6 +1,6 @@
 {
   "name": "ascii-art-ai-mcp",
-  "description": "Text-to-ASCII art, box drawing, table formatting, and progress bars.",
+  "description": "> **By [MEOK AI Labs](https://meok.ai)** \u2014 Sovereign AI tools for everyone.",
   "version": "1.0.0",
   "tools": [
     {
@@ -52,19 +52,10 @@
         "type": "object",
         "properties": {
           "headers": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+            "type": "array"
           },
           "rows": {
-            "type": "array",
-            "items": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            }
+            "type": "array"
           },
           "style": {
             "type": "string"

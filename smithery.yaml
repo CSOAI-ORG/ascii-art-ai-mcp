@@ -1,5 +1,5 @@
 name: ascii-art-ai-mcp
-description: Text-to-ASCII art, box drawing, table formatting, and progress bars.
+description: MEOK AI Labs MCP Server
 version: 1.0.0
 tools:
 - name: text_to_ascii
