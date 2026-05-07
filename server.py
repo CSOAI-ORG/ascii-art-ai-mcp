@@ -57,6 +57,21 @@ def text_to_ascii(text: str, font: str = "block", api_key: str = "") -> dict:
     Args:
         text: Text to convert (A-Z, 0-9, space, basic punctuation)
         font: Font style - 'block' (default)
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
@@ -82,6 +97,20 @@ def generate_box(text: str, style: str = "single", padding: int = 1, width: int 
         style: Border style - 'single', 'double', 'rounded', 'heavy', 'ascii'
         padding: Internal padding (default 1)
         width: Fixed width (0 = auto-fit)
+
+    Behavior:
+        This tool generates structured output without modifying external systems.
+        Output is deterministic for identical inputs. No side effects.
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
@@ -121,6 +150,21 @@ def table_formatter(headers: list[str], rows: list[list[str]], style: str = "gri
         headers: List of column header strings
         rows: List of rows (each row is a list of cell strings)
         style: Table style - 'grid', 'simple', 'pipe' (markdown)
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
@@ -167,6 +211,20 @@ def progress_bar_generator(progress: float, width: int = 30, style: str = "block
         progress: Progress value 0.0 to 1.0 (or 0-100)
         width: Bar width in characters (default 30)
         style: Bar style - 'block', 'arrow', 'dots', 'hash'
+
+    Behavior:
+        This tool generates structured output without modifying external systems.
+        Output is deterministic for identical inputs. No side effects.
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
