@@ -1,0 +1,25 @@
+{
+  "name": "ascii-art-ai-mcp",
+  "title": "Ascii Art Ai Mcp",
+  "description": "AI-powered ascii art ai MCP server for agents. Supports text to ascii, generate box, table formatter. By MEOK AI Labs.",
+  "version": "1.0.6",
+  "homepage": "https://meok.ai",
+  "license": "MIT",
+  "transport": {
+    "type": "stdio"
+  },
+  "tools": [
+    {
+      "name": "text_to_ascii"
+    },
+    {
+      "name": "generate_box"
+    },
+    {
+      "name": "table_formatter"
+    },
+    {
+      "name": "progress_bar_generator"
+    }
+  ]
+}
