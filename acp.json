@@ -1,0 +1,22 @@
+{
+  "acpVersion": "0.1",
+  "agent": {
+    "name": "ascii-art-ai-mcp",
+    "description": "Ascii Art Ai MCP Server by MEOK AI Labs",
+    "version": "1.0.6",
+    "provider": "MEOK AI Labs",
+    "interfaces": [
+      {
+        "type": "mcp",
+        "transport": "stdio",
+        "package": "ascii-art-ai-mcp"
+      }
+    ],
+    "capabilities": [
+      "text_to_ascii",
+      "generate_box",
+      "table_formatter",
+      "progress_bar_generator"
+    ]
+  }
+}

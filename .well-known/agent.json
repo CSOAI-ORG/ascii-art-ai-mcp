@@ -1,0 +1,59 @@
+{
+  "name": "ascii-art-ai-mcp",
+  "description": "Ascii Art Ai MCP Server by MEOK AI Labs",
+  "url": "https://proofof.ai/scorecard/ascii-art-ai-mcp.html",
+  "version": "1.0.6",
+  "protocolVersion": "0.2.0",
+  "provider": {
+    "organization": "MEOK AI Labs",
+    "url": "https://meok.ai"
+  },
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false
+  },
+  "defaultInputModes": [
+    "text"
+  ],
+  "defaultOutputModes": [
+    "text"
+  ],
+  "skills": [
+    {
+      "id": "text_to_ascii",
+      "name": "Text To Ascii",
+      "description": "text_to_ascii via ascii-art-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "generate_box",
+      "name": "Generate Box",
+      "description": "generate_box via ascii-art-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "table_formatter",
+      "name": "Table Formatter",
+      "description": "table_formatter via ascii-art-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "progress_bar_generator",
+      "name": "Progress Bar Generator",
+      "description": "progress_bar_generator via ascii-art-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    }
+  ]
+}
